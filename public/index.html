@@ -2,10 +2,26 @@
 <title>Chatroom</title>
 <meta charset="utf-8">
 
+<style>
+    .main { max-width: 600px; margin: 0 auto; width: 100%; }
+    .main input { display: inline-block; margin-right: 5px; }
+    .msg-date { font-size: .8em; margin-right: .5em; color: #999; display: inline-block; }
+    .msg-author,
+    .msg-notice { font-size: .8em; color: #999; display: inline-block; }
+    .msg { padding: .25em .5em; border-bottom: 1px solid #ddd; font-size: 1.2em; }
+    .msg-meta { display: block; }
+    .users { color: #999; margin-left; .5em; display: inline-block; }
+</style>
+
 <!-- JS -->
 <script src="//code.jquery.com/jquery-2.1.0.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="/js/main.js"></script> 
 
-<input type="text">
+<div class="main">
+<input id="msg" placeholder="msg" type="text">
+<input id="nickname" placeholder="type a nickname" type="text">
+<span id="users" class="users"></span><br>
+<input id="privateMsg" placeholder="send a private message" />to:<input id="private-audience" placeholder="enter id of user"/><button id="send-private-message">send message</button>
 <div id="messages"></div>
+</div>
